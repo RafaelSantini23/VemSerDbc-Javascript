@@ -4,8 +4,8 @@
 
 */
 
-const userDay = 'Segunda';
-const dayChosed = userDay === 'Sexta' ? 'Sextou' : 'Ainda não sextou';
+const userDay = confirm('Sextou ou Ainda não sextou');
+const dayChosed = userDay ? alert('Sextou') : alert('Ainda não sextou');
 
 console.log(dayChosed)
 
