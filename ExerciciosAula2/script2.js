@@ -80,11 +80,16 @@ for (let i = 1; i <= 100; i++) {
 
 let time = 0;
 
+let timer = setInterval(() => {
+  time < 10 ? console.log(`0${time}`) : console.log(time); 
+  if(time < 60) {
+    time++;
+  }else {
+    clearInterval(timer)
+  }
+}, 1000);
 
-while (time <= 60) {
-  time < 10 ? console.log(`0${time}`) : console.log(time);
-  time++
-}
+
 
 /**
  6) Pergunte ao usuário se ele quer:
