@@ -6,26 +6,26 @@
 
 */
 
-  let answer = prompt('Digite algo: ')
+  // let answer = prompt('Digite algo: ')
 
-  if (answer === 'Sim' || answer === 'SIM') {
-    alert("Parabéns")
-  } else if (answer === 'Não') {
-    answer = prompt('Digite novamente: ')
-    alert(answer)
-  } else {
-    confirm('Você tem noções dos seus atos?')
-  }
+  // if (answer === 'Sim' || answer === 'SIM') {
+  //   alert("Parabéns")
+  // } else if (answer === 'Não') {
+  //   answer = prompt('Digite novamente: ')
+  //   alert(answer)
+  // } else {
+  //   confirm('Você tem noções dos seus atos?')
+  // }
 
-  /*
-   2)Crie um programa que solicita para o usuário dois valores de texto, nome do cliente e nome do atendente;
-   Exiba um alerta para o usuário com a mensagem "Olá cliente eu me chamo atendente, em que posso ajudar?" (String interpolation)
-  */
+  // /*
+  //  2)Crie um programa que solicita para o usuário dois valores de texto, nome do cliente e nome do atendente;
+  //  Exiba um alerta para o usuário com a mensagem "Olá cliente eu me chamo atendente, em que posso ajudar?" (String interpolation)
+  // */
 
-  const clientName = prompt('Qual o nome do cliente? ');
-  const attendantName = prompt('Qual o nome do atendente?');
+  // const clientName = prompt('Qual o nome do cliente? ');
+  // const attendantName = prompt('Qual o nome do atendente?');
 
-  alert(`Olá ${clientName} eu me chamo ${attendantName}, em que posso ajudar? `)
+  // alert(`Olá ${clientName} eu me chamo ${attendantName}, em que posso ajudar? `)
 
 
  /*
@@ -38,10 +38,10 @@
 */
 
 
-let isFriday = confirm('Hoje é sexta-feira?');
-let isTwoGreaterThanFour = 2 > 4;
-let answerUser = prompt('Digite algo: ')
-let isValueEmpty = answerUser === null || answerUser === undefined || answerUser === '';
+// let isFriday = confirm('Hoje é sexta-feira?');
+// let isTwoGreaterThanFour = 2 > 4;
+// let answerUser = prompt('Digite algo: ')
+// let isValueEmpty = answerUser === null || answerUser === undefined || answerUser === '';
 
 /**
  4) Crie um programa que recebe dois números e uma operação desejada e mostre o resultado dessa operação (operações válidas: '+', '-', '*', '/'), 
@@ -59,7 +59,7 @@ let isValueEmpty = answerUser === null || answerUser === undefined || answerUser
 
   const isNumber = !isNaN(num1) && !isNaN(num2);
 
-  const isNumberInfinity = operation === '/' && num1 / num2 === Infinity || operation === '/' && num2 / num1 === Infinity;
+  const isNumberInfinity = operation === '/' && isFinite(num1) && isFinite(num2);
 
   if (!isNumber) {
     alert('Digite um valor válido');
@@ -68,6 +68,10 @@ let isValueEmpty = answerUser === null || answerUser === undefined || answerUser
   if (isNumberInfinity) {
     alert('Não pode ser divisivel por zero');
   }
+  
+  
+
+  
 
   if (isNumber && !isNumberInfinity) {
     switch (operation) {
@@ -81,7 +85,12 @@ let isValueEmpty = answerUser === null || answerUser === undefined || answerUser
         alert(`Os numeros multiplicados são ${num1 * num2}`);
         break;
       case '/':
-        alert(`Os numeros divididos são ${num1 / num2}`);
+        if(isNaN(num1 / num2)) {
+          alert('Digite numeros validos')
+        } else {
+          alert(`Os numeros divididos são ${num1 / num2}`);
+        }
+        
         break;
       default:
         alert('Operação inválida');
@@ -97,66 +106,66 @@ let isValueEmpty = answerUser === null || answerUser === undefined || answerUser
    
  */
 
-  const T1 = parseFloat(prompt('Digite a primeira nota: '));
-  const T2 = parseFloat(prompt('Digite a segunda nota: '));
-  const P1 = parseFloat(prompt('Digite a terceira nota: '));
+//   const T1 = parseFloat(prompt('Digite a primeira nota: '));
+//   const T2 = parseFloat(prompt('Digite a segunda nota: '));
+//   const P1 = parseFloat(prompt('Digite a terceira nota: '));
 
-  const average = (T1 + T2 + P1) / 3;
+//   const average = (T1 + T2 + P1) / 3;
 
-  const isNumberInfinity = !isNaN(T1) && !isNaN(T2) && !isNaN(P1)
+//   const isNumberInfinity = !isNaN(T1) && !isNaN(T2) && !isNaN(P1)
 
 
-  if (!isNumberInfinity) {
-    alert('Digite um numero')
-  } else if (average < 5) {
-    alert('Reprovado')
-  } else if (average >= 5 && average < 7) {
-    alert('Recuperação')
-  } else {
-    alert('Parabéns você passou!!!')
-  }
+//   if (!isNumberInfinity) {
+//     alert('Digite um numero')
+//   } else if (average < 5) {
+//     alert('Reprovado')
+//   } else if (average >= 5 && average < 7) {
+//     alert('Recuperação')
+//   } else {
+//     alert('Parabéns você passou!!!')
+//   }
 
-/*
-6) Crie um programa que solicite para o usuário que escolha uma das opções do menu:
-   1 - Fazer checkin (exibe um alert de boas vindas);
-   2 - Fazer checkout (mostra uma caixa de confirmação perguntando se tem certeza e se disser que sim exibe um alerta de despedida);
-   3 - Estender hospedagem (pergunta pro usuário quantos dias gostaria de estender e se for um número válido exibe um alerta de sucesso informando que a hospedagem foi estendida em X dias)
-   4 - Sair (exibe alerta de "Ok")
+// /*
+// 6) Crie um programa que solicite para o usuário que escolha uma das opções do menu:
+//    1 - Fazer checkin (exibe um alert de boas vindas);
+//    2 - Fazer checkout (mostra uma caixa de confirmação perguntando se tem certeza e se disser que sim exibe um alerta de despedida);
+//    3 - Estender hospedagem (pergunta pro usuário quantos dias gostaria de estender e se for um número válido exibe um alerta de sucesso informando que a hospedagem foi estendida em X dias)
+//    4 - Sair (exibe alerta de "Ok")
    
-   Obs: caso não seja nenhuma dessas opções exiba um alerta de opção inválida
+//    Obs: caso não seja nenhuma dessas opções exiba um alerta de opção inválida
 
-*/
+// */
 
-let resposta = parseInt(prompt('Selecione uma das opções: \n 1 - Fazer checkin \n 2 - Fazer checkout \n 3 - Estender hospedagem \n 4 - Sair'));
+// let resposta = parseInt(prompt('Selecione uma das opções: \n 1 - Fazer checkin \n 2 - Fazer checkout \n 3 - Estender hospedagem \n 4 - Sair'));
 
 
-switch (resposta) {
-  case 1:
-    alert('Bem Vindo ao nosso hotel!!')
-    break;
-  case 2:
-    let confirmUser = confirm('Tem certeza? ');
-    if (confirmUser) {
-      alert('Tenha um bom dia.')
-    }
-    break;
-  case 3:
-    let numberOfDays = parseInt(prompt('Digite a quantidade de dias: '))
-    let isNumberInfinity = !isNaN(numberOfDays);
+// switch (resposta) {
+//   case 1:
+//     alert('Bem Vindo ao nosso hotel!!')
+//     break;
+//   case 2:
+//     let confirmUser = confirm('Tem certeza? ');
+//     if (confirmUser) {
+//       alert('Tenha um bom dia.')
+//     }
+//     break;
+//   case 3:
+//     let numberOfDays = parseInt(prompt('Digite a quantidade de dias: '))
+//     let isNumberInfinity = !isNaN(numberOfDays);
 
-    if (!isNumberInfinity) {
-      alert('Digite um numero valido!')
-    } else {
-      alert('Sucesso')
-    }
-    break;
-  case 4:
-    alert('Ok! ')
-    break;
-  default:
-    alert('Opção Inválida!!')
-    break;
-}
+//     if (!isNumberInfinity) {
+//       alert('Digite um numero valido!')
+//     } else {
+//       alert('Sucesso')
+//     }
+//     break;
+//   case 4:
+//     alert('Ok! ')
+//     break;
+//   default:
+//     alert('Opção Inválida!!')
+//     break;
+// }
 
 
 
