@@ -46,9 +46,9 @@ console.log(dayChosed)
    
    let userQuestions;
 
-   while (userQuestions != 2) {
+   while (userQuestions !== 2) {
      userQuestions = parseInt(prompt('1 - Continuar perguntando\n 2 - Parar de perguntar '));
-     if(userQuestions != 1 && userQuestions != 2 ) {
+     if(userQuestions !== 1 && userQuestions !== 2 ) {
        alert('Informe um numero que seja 1 ou 2')
      }
    }
