@@ -22,7 +22,6 @@ for (let year = 2016; year <= currentYear; year++) {
     salaryYearBefore = salaryEmployee += (salaryEmployee * (salaryAfterDouble = salaryAfterDouble * 2))
 
     console.log(`Seu salário no ano de ${year} mudou para R$${salaryYearBefore.toFixed(2)}`);
-
   }
 
 }
@@ -96,27 +95,28 @@ while (time <= 60) {
  */
 
 
-let userQuestionNumber = parseInt(prompt('1 - Inserir número /\n2 - Finalizar'))
+// let userQuestionNumber = parseInt(prompt('1 - Inserir número \n2 - Finalizar'))
 
-let countUserNumbers = 0;
-let arr = [];
+  let countUserNumbers = 0;
+  let arr = [];
 
-do {
+  do {
   
-    while (userQuestionNumber === 1) {
-      let numberSelect = parseInt(prompt('Digite um numero: '));
-      userQuestionNumber = parseInt(prompt('1 - Inserir número /\n2 - Finalizar'))
+    userQuestionNumber = parseInt(prompt('1 - Inserir número /\n2 - Finalizar'))
     
+    if(userQuestionNumber === 1) {
+      let numberSelect = parseInt(prompt('Digite um numero: '));
+      
       if (!isNaN(numberSelect)) {
         arr.push(numberSelect)
-        countUserNumbers += numberSelect
+        countUserNumbers += numberSelect;
       }
       else {
         alert('Digite numeros valido');
       }
     }
-      
+    
+    
+  } while (userQuestionNumber !== 2);
+  
   alert(`A soma dos numeros ${arr} é : ${countUserNumbers}`);
-
-} while (userQuestionNumber !== 2);
-
