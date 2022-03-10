@@ -54,9 +54,9 @@
       4a) Tendo uma lista vazia [], crie uma função que recebe um elemento 
 	    qualquer como parâmetro e que adiciona esse elemento à lista;
       */
-
+     
+      let arr = [];
       function createArr(ele) {
-        let arr = [];
 
         arr.push(ele);
 
@@ -64,6 +64,7 @@
       }
   
       console.log(createArr('Caixa'));
+      console.log(createArr('leite'));
 
       /**
        4b) Crie duas funções, uma para remover o último elemento da lista e outra para remover o primeiro elemento da lista;
@@ -129,22 +130,21 @@
           - números múltiplos de 12;
           */
 
+          
         function createAleatoriesNumbers() {
  
           
           let arr = []
           let continues = true;
-          let valorInt = 0;
           
           while(continues) {
-            let randomNumbers = Math.round(Math.random() * 100)
+            let random = randomNumbers();
             
             
-            if(((randomNumbers % 2 != 0 && randomNumbers >= 14 && randomNumbers <= 50) || (randomNumbers % 12 === 0)) && !arr.includes(randomNumbers)) {
-              arr.push(randomNumbers)
-              valorInt++;
+            if(((random % 2 != 0 && random >= 14 && random <= 50) || (random % 12 === 0)) && !arr.includes(random)) {
+              arr.push(random)
             }
-            if(valorInt === 10) {
+            if(arr.length === 10) {
               continues = false;
             }
             
