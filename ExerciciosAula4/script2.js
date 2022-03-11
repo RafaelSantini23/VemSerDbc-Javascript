@@ -31,48 +31,28 @@
 
  */
 
-function numbersMax(arr) {
-  let maxNumber = 0;
-  let minNumber = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > maxNumber) {
-      minNumber = maxNumber
-      maxNumber = arr[i]
-    } else if (arr[i] > minNumber) {
-      minNumber = arr[i]
-    }
-  }
-
-  return [minNumber]
-}
-
-console.log(numbersMax([1, 3, 5, 7, 9, 12]));
-
-function minNumber(arr) {
-  let secondSmall = 1000;
-  let small = 1000;
-  for(let i = 0;i < arr.length; i++) {
-    if(arr[i] < small) {
-      small = secondSmall;
-      secondSmall = arr[i]; 
-    } else if(arr[i] < small) {
-      small = arr[i]
-    }
-  }
-
-  return [secondSmall];
-  
-}
-
-console.log(minNumber([1,3,5]));
-      
-const maxAndMin = () =>  {
-  let numberMax = numbersMax([1, 3, 5, 7, 9])
-  let numberMin = minNumber([1, 3, 5, 7, 9])
-
-  return numberMin.concat(numberMax)
-}
-console.log(maxAndMin());
+   var numbers = [1, 3, 5, 7, 9];
+   var orders = [];
+   
+   function maxMinNumbers() {
+       for(var j = 0 ; j < numbers.length; j++){
+           for(var i = 0;i < numbers.length; i++){
+                   if(numbers[i] < numbers[i+1]){
+                       var temp = numbers[i];
+                       numbers[i] = numbers[i+1];
+                       numbers[i+1] = temp;
+                   }
+               }
+       }
+       var bigger = numbers[1];
+       var small = numbers[numbers.length - 2]
+       if(bigger === small) {
+           return `${bigger}`
+       } else {
+           return `${bigger} ${small}`
+       }
+   }
+   console.log(maxMinNumbers(numbers));  
 
 
   /**
@@ -141,22 +121,43 @@ console.log(maxAndMin());
      5) Crie uma função que imprima no console todas as possíveis combinações de uma string;
       // ex: imprimirCombinacoes('tri')
       => possiveis combinações da string "tri":  
-      't', 'tr', 'ti', 'tri', 'tir', 'r', 'rt', 'ri', 'rit', 'rti', 'i', 'ir', 'it', 'irt', 'itr'
+      't', 'tr', 'ti', 'tri', 'tir', 'r', 'rt', 'ri', 1 'rit', 'rti', 'i', 'ir', 'it', 2 'irt', 'itr'
      */
 
     
     function printCombinations(str) {
-      let combinations = [];
-      
-      for(let i = 0; i < str.length; i++) {
-        for(let j = i + 1;j < str.length + 1; j++) {
-          combinations.push(str.slice(i,j));
+      let arr = str.split('');
+      let arrCombinations = [];
+      let aux = ''; // 0 = T  1 = R  2 = I
+
+      for(let i = 0; i < arr.length; i++) {
+        aux += arr[i];
+        arrCombinations.push(aux)
+        
+        for(let j = 0; j < arr.length; j++) {
+          if(i != j) {
+            aux += arr[j]
+            arrCombinations.push(aux)
+          }
+          
         }
+        aux = arr[i]
+        for(let k = (arr.length - 1); k >= 0; k--) {
+          if(i != k) {
+            aux += arr[k]
+            arrCombinations.push(aux)
+          }
+          
+        }
+
+        aux = '';
       }
-      return combinations ;
+
+      return arrCombinations;
+
     }
 
-    console.log(printCombinations("tri"));
+    console.log(printCombinations("bah"));
 
 
 
