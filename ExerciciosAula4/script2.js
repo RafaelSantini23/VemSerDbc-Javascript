@@ -31,21 +31,21 @@
 
  */
 
-   var numbers = [1, 3, 5, 7, 9];
-   var orders = [];
+   let numbers = [1, 3, 5, 7, 9];
+   
    
    function maxMinNumbers() {
-       for(var j = 0 ; j < numbers.length; j++){
-           for(var i = 0;i < numbers.length; i++){
+       for(let j = 0 ; j < numbers.length; j++){
+           for(let i = 0;i < numbers.length; i++){
                    if(numbers[i] < numbers[i+1]){
-                       var temp = numbers[i];
+                       let temp = numbers[i];
                        numbers[i] = numbers[i+1];
                        numbers[i+1] = temp;
                    }
                }
        }
-       var bigger = numbers[1];
-       var small = numbers[numbers.length - 2]
+       let bigger = numbers[1];
+       let small = numbers[numbers.length - 2]
        if(bigger === small) {
            return `${bigger}`
        } else {
