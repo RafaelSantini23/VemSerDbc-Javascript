@@ -101,11 +101,10 @@
           } 
           
         }
-        for(let k = 0; k < consonant.length; k++) {
-          if(arr[i] === consonant[k]) {
+          if((arr[i].toString().toLowerCase() === arr[i].toString().toUpperCase()) && arr[i] != vowels) {
             totalConsonant++;
           }
-        }
+        
       }
 
      
@@ -157,7 +156,7 @@
 
     }
 
-    console.log(printCombinations("bah"));
+    console.log(printCombinations("tri"));
 
 
 
