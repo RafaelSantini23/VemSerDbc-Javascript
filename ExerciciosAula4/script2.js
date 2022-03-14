@@ -101,8 +101,10 @@
           } 
           
         }
-          if((arr[i].toString().toLowerCase() === arr[i].toString().toUpperCase()) && arr[i] != vowels) {
-            totalConsonant++;
+          for(let k = 1; k < consonant.length; k++) {
+            if(arr[i] === consonant[k]) {
+              totalConsonant++;
+            }
           }
         
       }
