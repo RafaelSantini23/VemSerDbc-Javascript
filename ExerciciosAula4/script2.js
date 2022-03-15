@@ -63,7 +63,7 @@
 
    function firstLetterCapital(string) {
       let arr = string.split(' ');
-      let temp = '';
+      let temp;
       for(let i = 0; i < arr.length; i++) {
         temp = arr[i]
         arr[i] = temp[0].toUpperCase() + temp.slice(1)
