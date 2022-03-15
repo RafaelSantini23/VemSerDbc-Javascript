@@ -52,54 +52,34 @@ const marcarPonto = () => {
   let continues = true;
   let dia;
   let hora;
+  let id;
+  let findId;
 
+  
   while (continues) {
-    let name = prompt("Indique o nome: ")
-    for (let i = 0; i < colaboradores.length; i++) {
-      if (colaboradores[i].name === name) {
-        buscaColaborador = i;
-        continues = false;
-        break;
-      }
+    id = parseInt(prompt("Indique o ID: "))
+  
+    findId = colaboradores.find(e => id === e.id)
 
-      if (continues) {
-        alert('Nome não encontrado!')
+
+    dia = parseInt(prompt('Digite um dia: '));
+    hora = parseInt(prompt('Digite uma hora válida: '))
+
+    if((validador.validaDia(dia) && validador.validaHora(hora)) && (!isNaN(id) && find)) {
+      continues = false
+    } 
+    else {
+       alert('A hora,o dia ou o id não estão válidos!')
       }
 
     }
-  }
-    continues = true
-    while (continues) {
-      dia = parseInt(prompt("Digite um dia: "));
-
-      if (validador.validaDia(dia)) {
-        continues = false;
-      } else {
-        alert('Digite um dia válido!')
-      }
-    }
-
-      continues = true;
-
-      while (continues) {
-        hora = parseInt(prompt("Digite uma hora: "));
-
-        if (validador.validaHora(hora)) {
-          continues = false
-        } else {
-          alert('Digite um horário válido!')
-        }
-
-      }
-
 
       const marcacao = new Marcacao(dia, hora);
 
-      colaboradores[buscaColaborador].marcacoesPonto.push(marcacao)
+      let arr = findId.marcacoesPonto.push(marcacao)
 
-      alert('Hora marcada!')
+      return arr;
 
-      console.log(colaboradores[buscaColaborador].marcacoesPonto);
    
 
 }
@@ -116,7 +96,7 @@ const marcarPonto = () => {
     }
 
     validaDia = (day) => {
-      if (!isNaN(day) && day > 0) {
+      if ((!isNaN(day) && day > 0) && day !== null) {
         return true;
       }
       else {
@@ -125,7 +105,7 @@ const marcarPonto = () => {
     }
 
     validaHora = (hour) => {
-      if (!isNaN(hour) && (hour > 0 && hour < 24)) {
+      if ((!isNaN(hour) && (hour > 0 && hour < 24)) && hour !== null) {
         return true;
       } else {
         return false;
@@ -136,20 +116,14 @@ const marcarPonto = () => {
 
   const employesNotFound = () => {
 
-    let employes = [];
+    let employesNo = colaboradores.filter((employ) => { return employ.marcacoesPonto.length < 1 })
 
-    for (let i = 0; i < colaboradores.length; i++) {
-      if (colaboradores[i].marcacoesPonto.length === 0) {
-        employes.push(colaboradores[i])
-      }
-    }
+    let nomes = employesNo.map(e => e.name)
 
-    let nomes = employes.map(e => e.name)
-
-    if (employes.length < 1) {
+    if (employesNo.length < 1) {
       alert('Todos estão com os pontos marcados!')
     } else {
-      alert(`nome: ${nomes}`)
+      alert(`nomes: ${nomes}`)
     }
 
   }
