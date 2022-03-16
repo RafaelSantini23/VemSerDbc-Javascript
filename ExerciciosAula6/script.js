@@ -128,7 +128,7 @@ const marcarPonto = () => {
 
   }
 
-  const validador = new Validacoes();
+  // const validador = new Validacoes();
 
 
   const callMenu = () => {
