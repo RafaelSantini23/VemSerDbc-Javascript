@@ -286,8 +286,14 @@ const showColab = (event) => {
       Email: splitted[2]
     }
   })
+  if(listColabs.length < 1) {
 
-  console.table(mappedArray)
+    console.log('Não há itens na lista!!');
+  } else {
+    console.table(mappedArray)
+  }
+ 
+  
 }
 
 
