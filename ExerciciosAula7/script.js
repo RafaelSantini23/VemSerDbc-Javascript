@@ -42,7 +42,6 @@ const createDiv = () => {
 }
 
 const removeToDo = (li) => {
-  li.innerText += ' '
   let iconRemove = document.createElement('button');
   let icon = document.createElement('i');
 
@@ -69,7 +68,6 @@ const removeToDo = (li) => {
 }
 
 const changeColor = (div) => {
-  div.innerText += ' '
 
   let buttonChange = document.createElement('button')
   let icon = document.createElement('i');
