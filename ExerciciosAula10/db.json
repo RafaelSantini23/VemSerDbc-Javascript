@@ -1,0 +1,18 @@
+{
+  "colaboradores": [
+    {
+      "id": 1,
+      "nome": "Rafae",
+      "dataNascimento": "28/01/2002",
+      "email": "rafael@dbccompany.com",
+      "senha": "123Aa!@dasd"
+    },
+    {
+      "id": 2,
+      "nome": "Rafael Santini",
+      "dataNascimento": "28/01/2002",
+      "email": "rafael@dbccompany.com",
+      "senha": "123Aa!@dasd"
+    }
+  ]
+}
